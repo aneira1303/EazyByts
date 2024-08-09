@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<style>
+		@font-face {
+			font-family: myFont;
+			src: url(fonts/FredokaOne-Regular.ttf);
+		 }
+		 
+		 html {
+			 background-color:rgb(175, 114, 152);
+		 }
+		 
+		 
+		 * {
+		   box-sizing: border-box;
+		 }
+		 
+		 .selected{
+		   background-color: #d0f0c0;
+		 }
+		 
+		 .ui-tooltip{
+		   font-size: 10pt;
+		   padding: 1px 1px;
+		   max-width: 300px;
+		   color: black;
+		   font-family: myFont;
+		   border-radius: 20px;
+		   box-shadow: 0 0 7px black;
+		 }
+		 
+		 div {
+		   font-family: myFont;
+		   font-size: 20px;
+		   border-radius: 5px;
+		   padding: 20px;
+		   text-align: center;
+		 }
+		 
+		 .warning{
+		   color: red;
+		   margin: auto;
+		 }
+		 
+		 #small_icon{
+			 width: 4.5%;
+			   height: auto;
+			   position: absolute;
+			 top: 20px;
+			 left: 20px;
+		 }
+		 
+		 #choice_icon{
+			 width: 30%;
+			   height: auto;
+		 }
+		 
+		 #profile{
+			 width: 12%;
+			   height: auto;
+		 }
+		 
+		 .header {
+			 color: white;
+			 font-size: 50px;
+			 text-shadow: 2px 2px 5px grey;
+			 height: 80px;
+		 }
+		 
+		 .content {
+			 height: 80px;
+		 }
+		 
+		 .content_3{
+			 font-size: 30px;
+		 }
+		 
+		 input[type=text], select{
+		   font-family: myFont;
+		   width: 40%;
+		   padding: 12px 20px;
+		   margin: 8px 0;
+		   display: inline-block;
+		   border: 1px solid #ccc;
+		   border-radius: 4px;
+		   box-sizing: border-box;
+		 }
+		 
+		 
+		 
+		 input[type=password], select{
+			 font-family: myFont;
+		   width: 40%;
+		   padding: 12px 20px;
+		   margin: 8px 0;
+		   display: inline-block;
+		   border: 1px solid #ccc;
+		   border-radius: 4px;
+		   box-sizing: border-box;
+		 }
+		 
+		 input[type=button] {
+		   font-family: myFont;
+		   width: 40%;
+		   background-color: #09B83E;
+		   color: white;
+		   padding: 14px 20px;
+		   margin: 8px 0;
+		   border: none;
+		   border-radius: 4px;
+		   cursor: pointer;
+		 }
+		 
+		 input[type=button]:hover {
+		   background-color: #079732;
+		 }
+		 
+		 input[type=submit] {
+		   font-family: myFont;
+		   width: 40%;
+		   background-color: #09B83E;
+		   color: white;
+		   padding: 14px 20px;
+		   margin: 8px 0;
+		   border: none;
+		   border-radius: 4px;
+		   cursor: pointer;
+		 }
+		 
+		 input[type=submit]:hover {
+		   background-color: #079732;
+		 }
+		 
+		 #small_button{
+			 margin-right: 220px;
+		 }
+		 
+		 #small_button_back{
+			 width: 15%;
+			 margin-top: 180px;
+			 float: left;
+		 }
+		 
+		 #small_button_last{
+			 width: 15%;
+			 margin-top: 0px;
+		   margin-bottom: 0px;
+			 float: left;
+		 }
+		 
+		 #join_button{
+		   margin: 15px 200px;
+		 }
+		 
+		 #submit_button{
+		   margin: auto;
+		 }
+		 
+		 .users-list {
+		   width: 100%;
+		 }
+		 .chat_button{
+			 font-family: myFont;
+			 width: 35px;
+			 height: 35px;
+			 padding:0;
+			 float: right;
+			 border: 1px solid #dedede;
+			 border-radius: 5px;
+			 background-color: #ffffff;
+		   cursor: pointer;
+		 }
+		 .chat_button:hover{
+			 background: #ddd;
+		 }
+		 
+		 .column {
+		   float: left;
+		   font-size: 15px;
+		   width: 50%;
+		   padding: 15px;
+		 }
+		 
+		 .row:after {
+		   font-size: 20px;
+		   content: "";
+		   display: table;
+		   clear: both;
+		 }
+		 
+		 table {
+		   font-family: myFont;
+		   border-collapse: collapse;
+		   width: 60%;
+		   position: relative;
+		   margin-left: 300px;
+		   /*margin: auto;*/
+		 }
+		 
+		 th, td {
+		   border: 1px solid black;
+		   text-align: left;
+		   padding: 4px;
+		 }
+		 
+		 tr{
+			 background-color: #f2f2f2
+		 }
+		 
+		 th {
+		   background-color: #09B83E;
+		   color: white;
+		 }
+		 
+		 .users {
+		   width: 25%;
+		   float: left;
+		 }
+		 
+		 .texts {
+		   width: 75%;
+		   float: left;
+		   background-color: #cdfcc6;
+		 }
+		 
+		 .log-out{
+		   font-family: myFont;
+		   width: 40%;
+		   background-color: #09B83E;
+		   color: white;
+		   padding: 14px 20px;
+		   position: absolute;
+		   bottom: 30px;
+		   left: 10px;
+		   margin: 8px 0;
+		   border: none;
+		   border-radius: 4px;
+		   cursor: pointer;
+		 }
+		 
+		 .log-out:hover{
+		   background-color: #079732;
+		 }
+		 
+		 .log-out a{
+		   text-decoration: none;
+		   color: #fff;
+		 }
+		 
+		 #message{
+			 width: 100%;
+			 border-color: #ccc;
+		 }
+		 
+		 #msg{
+		   width: 100%;
+			 border-color: #ccc;
+		   font-family: myFont;
+		   padding: 12px 20px;
+		   margin: 8px 0;
+		   display: inline-block;
+		   border: 1px solid #ccc;
+		   border-radius: 4px;
+		   box-sizing: border-box;
+		   resize: none;
+		 
+		 }
+		 
+		 .container_messages {
+		   border: 2px solid #dedede;
+		   background-color: #ffffff;
+		   border-radius: 5px;
+		   padding: auto;
+		   margin: 10px 0;
+		   text-align: left;
+		 }
+		 
+		 .dark {
+		   border-color: #ccc;
+		   background-color: #ddd;
+		   text-align: right;
+		 }
+		 
+		 .container_messages img {
+		   display: inline-block;
+		   position: relative;
+		   bottom: 10px;
+		   float: left;
+		   max-width: 60px;
+		   padding: 0px;
+		   width: 100%;
+		   margin-right: 20px;
+		   margin-bottom: 50px;
+		   border-radius: 50%;
+		 }
+		 
+		 .container_messages img.right {
+		   float: right;
+		   margin-left: 20px;
+		   margin-right:0;
+		 }
+		 
+	</style>
+</head>
+
+<body>
+	<div id = "#page_element" class="tab_one">
+		<img src="img/icon.png" id="small_icon">
+		<header class="header">
+			<strong>Laven - The Chat Room</strong>
+		</header>
+		<main class="content">
+			<p>Welcome to Laven, a chatroom website where</p>
+			<p>his has a room for registered members to dicuss on various topics.</p>
+		</main>
+
+		<div id = "user_entry">
+			<img src="img/profile.png" id="profile"><br>
+			<label for="username"></label><input type="text" id="username" name="firstname" placeholder="Username..." title = "The username, that you enter will be visible to other members of the chat."><br>
+			<label for="pwd"></label><input type="password" id="password" name="pwd" placeholder="Password..." title = "The password must consist of a capital letter, number and a symbol."><br>
+		 	<input type="submit" value="Log in" id = "log_in"/><br>
+	 	</div>
+
+	 	<warning id = "warning"></warning>
+
+	</div>
+
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/Tab1.js"></script>
+</body>
+</html>

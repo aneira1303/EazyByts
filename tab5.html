@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iChat</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id = "page_element" class="tab_four">
+  <img src="img/icon.png" id="small_icon">
+    <header class="header">
+    <strong> iChat </strong>
+  </header>
+ </div>
+
+ <div id = "page_element" class="users">
+  <h1>Members online:</h1>
+  <ul>
+    <li>Angelica</li>
+    <li>Cat Lady</li>
+    <li>Mr. Roger</li>
+    <li>Lisa</li>
+  </ul>
+</div>
+
+ <div id = "page_element" class="texts">
+  <h1>The cat chatroom</h1>
+
+  <div class="container_messages">
+  	<img src="img/profile.png" style="width:100%;">
+  	<p>Do you like cats?</p>
+  </div>
+
+	<div class="container_messages dark">
+  		<img src="img/profile.png" class="right" style="width:100%;">
+  		<p>Yes! They are wonderful</p>
+	</div>
+
+	<form action="/action.php">
+  		<input type="text" id="message" placeholder="Write a message...">
+  		<button type="button" class ="chat_button">
+    		<img src="img/send.png" />
+		</button>
+		<button type="button" class ="chat_button">
+    		<img src="img/emoji.png" />
+		</button>
+  </div>
+	
+
+	<input type="button" id="small_button_last" value="Exit the chat">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/Tab5.js"></script>
+
+</body>
+</html>
